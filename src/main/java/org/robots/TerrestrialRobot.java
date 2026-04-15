@@ -27,7 +27,7 @@ public class TerrestrialRobot extends Robot {
     }
 
     @Override
-    public String toString() {
+    public String getTechnicalDescription() {
         return "TerrestrialRobot{" +
                 "speedMaxKmH=" + speedMaxKmH +
                 ", tractionType=" + tractionType +

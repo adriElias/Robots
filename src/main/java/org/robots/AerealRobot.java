@@ -27,7 +27,7 @@ public class AerealRobot extends Robot {
     }
 
     @Override
-    public String toString() {
+    public String getTechnicalDescription() {
         return "AerealRobot{" +
                 "altitudeMaxMeters=" + altitudeMaxMeters +
                 ", flightAutonomy=" + flightAutonomy +

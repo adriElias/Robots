@@ -47,8 +47,7 @@ public class Robot {
         this.dateRegistered = dateRegistered;
     }
 
-    @Override
-    public String toString() {
+    public String getTechnicalDescription() {
         return "Robot{" +
                 "name='" + name + '\'' +
                 ", maker='" + maker + '\'' +

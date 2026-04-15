@@ -27,7 +27,7 @@ public class AquaticRobot extends Robot {
     }
 
     @Override
-    public String toString() {
+    public String getTechnicalDescription() {
         return "AquaticRobot{" +
                 "depthMaxMeters=" + depthMaxMeters +
                 ", propulsionSystem=" + propulsionSystem +
