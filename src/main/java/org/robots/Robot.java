@@ -47,12 +47,10 @@ public abstract class Robot {
         this.dateRegistered = dateRegistered;
     }
 
-    public String getTechnicalDescription() {
-        return "Robot{" +
-                "name='" + name + '\'' +
-                ", maker='" + maker + '\'' +
-                ", creationDate=" + creationDate +
-                ", dateRegistered=" + dateRegistered +
-                '}';
+    public abstract String getTechnicalDescription();
+
+    @Override
+    public String toString() {
+        return getTechnicalDescription();
     }
 }
