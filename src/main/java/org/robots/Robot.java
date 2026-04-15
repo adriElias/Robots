@@ -1,7 +1,6 @@
 package org.robots;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Robot {
     public String name;
