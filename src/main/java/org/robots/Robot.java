@@ -2,7 +2,7 @@ package org.robots;
 
 import java.time.LocalDate;
 
-public class Robot {
+public abstract class Robot {
     public String name;
     public String maker;
     public int creationDate;
