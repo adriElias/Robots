@@ -1,29 +1,20 @@
 package org.robots;
 
+import java.time.LocalDate;
+import java.time.Year;
+
 public class TerrestrialRobot extends Robot implements ResistanceEvaluable {
     public int speedMaxKmH;
     public TractionType tractionType;
 
-    public TerrestrialRobot(String name, String maker, int creationDate, int speedMaxKmH, TractionType tractionType) {
-        super(name, maker, creationDate, null);
+    public TerrestrialRobot(String name, String maker, Year creationDate, LocalDate dateRegistered, int speedMaxKmH, TractionType tractionType) {
+        super(name, maker, creationDate, dateRegistered);
         this.speedMaxKmH = speedMaxKmH;
         this.tractionType = tractionType;
     }
 
     public int getSpeedMaxKmH() {
         return speedMaxKmH;
-    }
-
-    public void setSpeedMaxKmH(int speedMaxKmH) {
-        this.speedMaxKmH = speedMaxKmH;
-    }
-
-    public TractionType getTractionType() {
-        return tractionType;
-    }
-
-    public void setTractionType(TractionType tractionType) {
-        this.tractionType = tractionType;
     }
 
     @Override
@@ -38,10 +29,10 @@ public class TerrestrialRobot extends Robot implements ResistanceEvaluable {
                 '}';
     }
 
-    @Override
-    public boolean isEligibleForResistanceCompetition() {
+    private boolean isEligibleForResistanceCompetition() {
         return tractionType == TractionType.CATERPILLAR;
     }
+
     @Override
     public String getResistanceReport() {
         if (isEligibleForResistanceCompetition()) {

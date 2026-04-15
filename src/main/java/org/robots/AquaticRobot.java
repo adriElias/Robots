@@ -1,28 +1,15 @@
 package org.robots;
 
+import java.time.LocalDate;
+import java.time.Year;
+
 public class AquaticRobot extends Robot {
     public int depthMaxMeters;
     public PropulsionSystem propulsionSystem;
 
-    public AquaticRobot(String name, String maker, int creationDate, int depthMaxMeters, PropulsionSystem propulsionSystem) {
-        super(name, maker, creationDate, null);
+    public AquaticRobot(String name, String maker, Year creationDate, LocalDate dateRegistered, int depthMaxMeters, PropulsionSystem propulsionSystem) {
+        super(name, maker, creationDate, dateRegistered);
         this.depthMaxMeters = depthMaxMeters;
-        this.propulsionSystem = propulsionSystem;
-    }
-
-    public int getDepthMaxMeters() {
-        return depthMaxMeters;
-    }
-
-    public void setDepthMaxMeters(int depthMaxMeters) {
-        this.depthMaxMeters = depthMaxMeters;
-    }
-
-    public PropulsionSystem getPropulsionSystem() {
-        return propulsionSystem;
-    }
-
-    public void setPropulsionSystem(PropulsionSystem propulsionSystem) {
         this.propulsionSystem = propulsionSystem;
     }
 
@@ -37,5 +24,4 @@ public class AquaticRobot extends Robot {
                 ", dateRegistered=" + dateRegistered +
                 '}';
     }
-
 }
