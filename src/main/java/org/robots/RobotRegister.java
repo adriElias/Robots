@@ -3,7 +3,6 @@ package org.robots;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class RobotRegister {
     private final List<Robot> robots = new ArrayList<>();
@@ -19,20 +18,20 @@ public class RobotRegister {
     public List<String> getAllDescriptions() {
         return robots.stream()
                 .map(Robot::getTechnicalDescription)
-                .collect(Collectors.toList());
+                .toList();
     }
 
-    public List<TerrestrialRobot> getTerrestrialRobots(double minSpeedKmh) {
+    public List<TerrestrialRobot> getTerrestrialRobotsFasterThan(double minSpeedKmh) {
         return robots.stream()
                 .filter(r -> r instanceof TerrestrialRobot)
                 .map(r -> (TerrestrialRobot) r)
                 .filter(r -> r.getSpeedMaxKmH() > minSpeedKmh)
-                .collect(Collectors.toList());
+                .toList();
     }
 
-    public List<Robot> findByMaker(String maker) {
+    public List<Robot> getRobotsFindByMaker(String maker) {
         return robots.stream()
                 .filter(r -> r.getMaker().equalsIgnoreCase(maker))
-                .collect(Collectors.toList());
+                .toList();
     }
 }
