@@ -48,4 +48,9 @@ public abstract class Robot {
     }
 
     public abstract String getTechnicalDescription();
+
+    @Override
+    public String toString() {
+        return getTechnicalDescription();
+    }
 }

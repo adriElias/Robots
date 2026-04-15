@@ -1,6 +1,6 @@
 package org.robots;
 
-public class AerealRobot extends Robot {
+public class AerealRobot extends Robot implements ResistanceEvaluable {
     public int altitudeMaxMeters;
     public int flightAutonomy;
 
@@ -36,5 +36,19 @@ public class AerealRobot extends Robot {
                 ", creationDate=" + creationDate +
                 ", dateRegistered=" + dateRegistered +
                 '}';
+    }
+
+    @Override
+    public boolean isEligibleForResistanceCompetition() {
+        return flightAutonomy > 60;
+    }
+
+    @Override
+    public String getResistanceReport() {
+        if (isEligibleForResistanceCompetition()) {
+            return "AerealRobot " + name + " is eligible for the resistance competition with a flight autonomy of " + flightAutonomy + " minutes.";
+        } else {
+            return "AerealRobot " + name + " is not eligible for the resistance competition with a flight autonomy of only " + flightAutonomy + " minutes.";
+        }
     }
 }
